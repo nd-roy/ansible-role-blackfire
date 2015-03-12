@@ -1,4 +1,4 @@
-Blockfire.io
+Blackfire.io
 ============
 
 An ansible role to install and configure Blackfire
@@ -11,8 +11,9 @@ None.
 Role Variables
 --------------
 
- __blackfire_server_id and blackfire_token must be changed !!__
----------------------------------------------------------------
+__ 'blackfire_server_id' and 'blackfire_token' must be changed !! __
+--------------------------------------------------------------------
+
 
     # Sets the server id used to authenticate with Blackfire API
     #blackfire_server_id: __CHANGE_THIS_VALUE__
