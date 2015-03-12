@@ -13,3 +13,7 @@
 - name: Install the blackfire-agent package
   tags: blackfire
   yum: name=blackfire-agent state=present
+
+- name: Install the blackfire-php package
+  tags: blackfire
+  yum: name=blackfire-php state=present

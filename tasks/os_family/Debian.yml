@@ -17,3 +17,7 @@
 - name: Install the blackfire-agent package
   tags: blackfire
   apt: name=blackfire-agent state=present
+
+- name: Install the blackfire-php package
+  tags: blackfire
+  apt: name=blackfire-php state=present
