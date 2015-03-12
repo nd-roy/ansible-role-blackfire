@@ -11,8 +11,8 @@ None.
 Role Variables
 --------------
 
-__ 'blackfire_server_id' and 'blackfire_token' must be changed !! __
---------------------------------------------------------------------
+'blackfire_server_id' and 'blackfire_token' must be changed !!
+--------------------------------------------------------------
 
 
     # Sets the server id used to authenticate with Blackfire API
