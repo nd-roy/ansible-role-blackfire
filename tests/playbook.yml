@@ -4,4 +4,3 @@
   sudo: yes
   roles:
     - { role: ../../ansible-role-blackfire, tags: blackfire }
-  

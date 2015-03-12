@@ -8,5 +8,4 @@ blackfire_directory: /etc/blackfire
 #blackfire_server_id: __CHANGE_THIS_VALUE__
 #blackfire_token:     __CHANGE_THIS_VALUE__
 
-blackfire_server_id: 43f5573f-5c07-4a60-aa8f-07058b3f5210
-blackfire_token:     9359e5508627d2e67fdf749ee2f4fd91b9367a640aee6f48ccf2b198c08f3a52
+

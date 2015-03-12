@@ -1,0 +1,5 @@
+---
+
+# RedHat vars
+
+blackfire_repository: http://packages.blackfire.io/fedora/blackfire.repo

@@ -1,0 +1,15 @@
+---
+
+## RedHat tasks
+
+- name: Install the pygpgme package used to verify GPG signatures
+  tags: blackfire
+  yum: name=pygpgme state=present
+
+- name: Add Blackfire repository to the configuration
+  tags: blackfire
+  shell: curl "{{ blackfire_repository }}" | sudo tee /etc/yum.repos.d/blackfire.repo
+
+- name: Install the blackfire-agent package
+  tags: blackfire
+  yum: name=blackfire-agent state=present
