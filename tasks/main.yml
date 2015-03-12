@@ -1,2 +1,31 @@
 ---
-# tasks file for .
+# tasks file for blackfire.
+
+- name: Install Curl
+  apt: name=curl state=present
+
+- name: Include OS specific vars
+  tags: blackfire
+  include_vars: "os_family/{{ ansible_os_family }}.yml"
+
+- include: os_family/Debian.yml
+  tags: blackfire
+  when: ansible_os_family == 'Debian'
+
+- include: os_family/RedHat.yml
+  tags: blackfire
+  when: ansible_os_family == 'RedHat'
+
+- name: Create agent configuration
+  tags: blackfire
+  template:
+    src=agent.j2
+    dest={{ blackfire_directory }}/agent
+    owner=0
+    group=0
+    mode=0644
+
+- name: Service blackfire-agent restart
+  tags: blackfire
+  sudo: true
+  service: name=blackfire-agent state=restarted

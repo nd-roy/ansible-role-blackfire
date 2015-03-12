@@ -1,0 +1,19 @@
+---
+
+## Debian tasks
+
+- name: Register the packagecloud key
+  tags: blackfire
+  shell: "curl -s {{ blackfire_package_cloud_key_url }} | sudo apt-key add -"
+
+- name: Add Blackfire package list in source.list
+  tags: blackfire
+  shell: echo "deb {{ blackfire_package_url }} any main" | sudo tee {{ blackfire_source_list_file }}
+
+- name: Update the repositories
+  tags: blackfire
+  apt: update_cache=yes
+
+- name: Install the blackfire-agent package
+  tags: blackfire
+  apt: name=blackfire-agent state=present
