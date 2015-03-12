@@ -1,5 +1,5 @@
 ---
-# Defaults file for .
+# Defaults file for blackfire role.
 
 # Sets the server id used to authenticate with Blackfire API
 #blackfire_server_id: __CHANGE_THIS_VALUE__
