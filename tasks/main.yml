@@ -35,4 +35,12 @@
   sudo: true
   command: sudo php5enmod blackfire
 
+- name: Restart PHP FPM if enable in configuration
+  tags: blackfire
+  service: name=php5-fpm state=restarted
+  when: blackfire_php_fpm_enable
 
+- name: Restart apache if enable in configuration
+  tags: blackfire
+  service: name=apache2 state=restarted
+  when: blackfire_apache_enable
