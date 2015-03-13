@@ -7,7 +7,7 @@ python:
 
 install:
   - pip install ansible==1.4.0
-
+  - sudo apt-get install php5 php5-fpm
 script:
   - cd tests
   - ansible-playbook -i inventory playbook.yml --syntax-check
