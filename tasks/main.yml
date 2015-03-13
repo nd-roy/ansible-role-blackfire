@@ -29,3 +29,10 @@
   tags: blackfire
   sudo: true
   service: name=blackfire-agent state=restarted
+
+- name: Enable blackfire php extension
+  tags: blackfire
+  sudo: true
+  command: sudo php5enmod blackfire
+
+
