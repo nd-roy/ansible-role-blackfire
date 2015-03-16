@@ -30,6 +30,13 @@ Role Variables
     
     # Sets the URL of Blackfire's data collector
     blackfire_collector: https://blackfire.io
+    
+    # Restart apache after the activation of blackfire php extension
+    blackfire_apache_enable: false
+    
+    # Restart php fpm after the activation of blackfire php extension
+    blackfire_php_fpm_enable: true
+
 
 Dependencies
 ------------
