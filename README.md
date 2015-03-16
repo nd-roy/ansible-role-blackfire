@@ -1,4 +1,4 @@
-Blockfire.io
+Blackfire.io
 ============
 
 An ansible role to install and configure Blackfire
@@ -11,7 +11,25 @@ None.
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+'blackfire_server_id' and 'blackfire_token' must be changed !!
+--------------------------------------------------------------
+
+
+    # Sets the server id used to authenticate with Blackfire API
+    #blackfire_server_id: __CHANGE_THIS_VALUE__
+    
+    # Sets the server token used to authenticate with Blackfire API. It is unsafe to set this from the command line
+    #blackfire_token:     __CHANGE_THIS_VALUE__
+    
+    # Log verbosity level (4: debug, 3: info, 2: warning, 1: error)
+    blackfire_log_level: 1
+    
+    # Sets the socket the agent should read traces from.
+    # Possible value can be a unix socket or a TCP address. ie: unix:///var/run/blackfire/agent.sock or tcp://127.0.0.1:8307
+    blackfire_socket: "unix:///var/run/blackfire/agent.sock"
+    
+    # Sets the URL of Blackfire's data collector
+    blackfire_collector: https://blackfire.io
 
 Dependencies
 ------------

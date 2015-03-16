@@ -14,7 +14,7 @@ ca-cert=
 ; setting: collector
 ; desc   : Sets the URL of Blackfire's data collector
 ; default: https://blackfire.io
-collector=https://blackfire.io
+collector={{ blackfire_collector }}
 
 ;
 ; setting: http-proxy
@@ -38,7 +38,7 @@ log-file=stderr
 ; setting: log-level
 ; desc   : log verbosity level (4: debug, 3: info, 2: warning, 1: error)
 ; default: 1
-log-level=1
+log-level={{ blackfire_log_level }}
 
 ;
 ; setting: server-id
@@ -56,7 +56,7 @@ server-token={{ blackfire_token }}
 ; setting: socket
 ; desc   : Sets the socket the agent should read traces from. Possible value can be a unix socket or a TCP address. ie: unix:///var/run/blackfire/agent.sock or tcp://127.0.0.1:8307
 ; default: unix:///var/run/blackfire/agent.sock
-socket=unix:///var/run/blackfire/agent.sock
+socket={{ blackfire_socket }}
 
 ;
 ; setting: spec

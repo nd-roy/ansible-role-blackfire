@@ -24,8 +24,18 @@
     owner=0
     group=0
     mode=0644
+  register: agent_configuration_state
 
 - name: Service blackfire-agent restart
   tags: blackfire
   sudo: true
   service: name=blackfire-agent state=restarted
+  notify:
+    - restart php-fpm
+    - restart apache
+  when: agent_configuration_state|changed
+
+- name: Restart apache if enable in configuration
+  tags: blackfire
+  service: name=apache2 state=restarted
+  when: blackfire_apache_enable

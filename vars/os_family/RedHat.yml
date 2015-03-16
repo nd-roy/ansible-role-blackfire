@@ -1,0 +1,7 @@
+---
+
+# RedHat vars
+
+blackfire_repository: http://packages.blackfire.io/fedora/blackfire.repo
+
+blackfire_php_fpm_daemon: php-fpm

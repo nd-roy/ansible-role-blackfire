@@ -3,9 +3,6 @@ $VM_BOX = ENV.has_key?('VM_BOX') ? ENV['VM_BOX'] : 'puphpet/debian75-x64'
 Vagrant.configure('2') do |config|
   config.vm.box = $VM_BOX
 
-  config.vm.network "forwarded_port", guest: 5565, host: 5565
-  config.vm.network "forwarded_port", guest: 4352, host: 4352
-
   config.vm.provision :ansible do |ansible|
     ansible.playbook   = 'playbook.yml'
     ansible.extra_vars = {
