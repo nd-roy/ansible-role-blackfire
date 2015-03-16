@@ -1,6 +1,8 @@
 Blackfire.io
 ============
 
+[![Build Status](https://travis-ci.org/AbdoulNdiaye/ansible-role-blackfire.svg)](https://travis-ci.org/AbdoulNdiaye/ansible-role-blackfire)
+
 An ansible role to install and configure Blackfire
 
 Requirements
