@@ -15,7 +15,7 @@ else
   set :sudo_password, ENV['SUDO_PASSWORD']
 end
 
-host = ENV['TARGET_HOST']
+host = 'default'
 
 `vagrant up #{host}`
 
