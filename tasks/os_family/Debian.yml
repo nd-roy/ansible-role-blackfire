@@ -4,15 +4,16 @@
 
 - name: Register the packagecloud key
   tags: blackfire
-  shell: "curl -s {{ blackfire_package_cloud_key_url }} | sudo apt-key add -"
+  apt_key:
+    url: "{{ blackfire_package_cloud_key_url }}"
+    state: present
 
 - name: Add Blackfire package list in source.list
   tags: blackfire
-  shell: echo "deb {{ blackfire_package_url }} any main" | sudo tee {{ blackfire_source_list_file }}
-
-- name: Update the repositories
-  tags: blackfire
-  apt: update_cache=yes
+  apt_repository:
+    repo: 'deb {{ blackfire_package_url }} any main'
+    state: present
+    update_cache: yes
 
 - name: Install the blackfire-agent package
   tags: blackfire
