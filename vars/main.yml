@@ -4,8 +4,3 @@
 blackfire_package_cloud_key_url: https://packagecloud.io/gpg.key
 
 blackfire_directory: /etc/blackfire
-
-#blackfire_server_id: __CHANGE_THIS_VALUE__
-#blackfire_token:     __CHANGE_THIS_VALUE__
-
-
