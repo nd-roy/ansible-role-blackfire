@@ -13,7 +13,7 @@ None.
 Role Variables
 --------------
 
-'blackfire_server_id' and 'blackfire_token' must be changed !!
+'blackfire_server_id' and 'blackfire_server_token' must be changed !!
 --------------------------------------------------------------
 
 
@@ -21,7 +21,7 @@ Role Variables
     #blackfire_server_id: __CHANGE_THIS_VALUE__
     
     # Sets the server token used to authenticate with Blackfire API. It is unsafe to set this from the command line
-    #blackfire_token:     __CHANGE_THIS_VALUE__
+    #blackfire_server_token: __CHANGE_THIS_VALUE__
     
     # Log verbosity level (4: debug, 3: info, 2: warning, 1: error)
     blackfire_log_level: 1
