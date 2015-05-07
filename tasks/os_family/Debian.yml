@@ -2,6 +2,9 @@
 
 ## Debian tasks
 
+- name: Install Curl
+  apt: name=curl state=present
+
 - name: Register the packagecloud key
   tags: blackfire
   apt_key:

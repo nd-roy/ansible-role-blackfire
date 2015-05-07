@@ -1,9 +1,6 @@
 ---
 # tasks file for blackfire.
 
-- name: Install Curl
-  apt: name=curl state=present
-
 - name: Include OS specific vars
   tags: blackfire
   include_vars: "os_family/{{ ansible_os_family }}.yml"
