@@ -2,6 +2,9 @@
 
 ## RedHat tasks
 
+- name: Install Curl
+  yum: name=curl state=present
+
 - name: Install the pygpgme package used to verify GPG signatures
   tags: blackfire
   yum: name=pygpgme state=present
@@ -12,7 +15,7 @@
 
 - name: Install the blackfire-agent package
   tags: blackfire
-  yum: name=blackfire-agent state=present
+  yum: name=blackfire-agent state=present update_cache=yes
 
 - name: Install the blackfire-php package
   tags: blackfire
