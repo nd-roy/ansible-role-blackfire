@@ -18,7 +18,7 @@ Role Variables
 'blackfire_server_id' and 'blackfire_server_token' must be changed !!
 --------------------------------------------------------------
 
-
+``` yaml
     # Sets the server id used to authenticate with Blackfire API
     #blackfire_server_id: __CHANGE_THIS_VALUE__
     
@@ -40,7 +40,7 @@ Role Variables
     
     # Restart php fpm after the activation of blackfire php extension
     blackfire_php_fpm_enable: true
-
+```
 
 Dependencies
 ------------
@@ -52,9 +52,14 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
+``` yaml
     - hosts: all
       roles:
          - { role: AbdoulNdiaye.blackfire }
+      vars:
+        blackfire_server_id:    __CHANGE_THIS_VALUE__
+        blackfire_server_token: __CHANGE_THIS_VALUE__
+```
 
 License
 -------
