@@ -2,7 +2,7 @@ Blackfire.io
 ============
 
 [![Build Status](https://travis-ci.org/AbdoulNdiaye/ansible-role-blackfire.svg)](https://travis-ci.org/AbdoulNdiaye/ansible-role-blackfire)
-
+[![Galaxy](https://img.shields.io/badge/Galaxy-AbdoulNdiaye.blackfire-blue.svg)](https://galaxy.ansible.com/list#/roles/3201)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AbdoulNdiaye/ansible-role-blackfire?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 An ansible role to install and configure Blackfire
