@@ -44,6 +44,7 @@ env:
 install:
   # Install Ansible.
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
+  - gem install serverspec
 
 matrix:
   allow_failures:
@@ -64,3 +65,4 @@ script:
     | grep -q 'changed=0.*unreachable=0.*failed=0'
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
+  - rake spec
