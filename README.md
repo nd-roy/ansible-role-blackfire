@@ -62,9 +62,9 @@ Example Playbook
 FAQ
 ---
 
-## My playbook run fails with error **stderr: sudo: sorry, you must have a tty to run sudo**
+Q: My playbook run fails with error **stderr: sudo: sorry, you must have a tty to run sudo**
 
-On RHEL based systems **/etc/sudoers** has line:
+A: On RHEL based systems **/etc/sudoers** has line:
 
 ```
 Defaults    requiretty
