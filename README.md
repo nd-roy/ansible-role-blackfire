@@ -53,7 +53,7 @@ Example Playbook
 ``` yaml
     - hosts: all
       roles:
-         - { role: AbdoulNdiaye.blackfire }
+         - { role: AbdoulNdiaye.Blackfire }
       vars:
         blackfire_server_id:    __CHANGE_THIS_VALUE__
         blackfire_server_token: __CHANGE_THIS_VALUE__
