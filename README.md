@@ -59,6 +59,19 @@ Example Playbook
         blackfire_server_token: __CHANGE_THIS_VALUE__
 ```
 
+FAQ
+---
+
+Q: My playbook run fails with error **stderr: sudo: sorry, you must have a tty to run sudo**
+
+A: On RHEL based systems **/etc/sudoers** has line:
+
+```
+Defaults    requiretty
+```
+
+It's safe to remove that line (https://bugzilla.redhat.com/show_bug.cgi?id=1020147) and by doing that everything should work.
+
 License
 -------
 
