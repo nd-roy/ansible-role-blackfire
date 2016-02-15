@@ -3,7 +3,7 @@
 language: ruby
 
 rvm:
-  - 2.2.x
+  - 2.2.3
 
 env:
   - ANSIBLE_VERSION=latest
@@ -42,8 +42,10 @@ env:
   - ANSIBLE_VERSION=1.4.1
   - ANSIBLE_VERSION=1.4
 
-install:
+before_install:
   - sudo apt-get install python2.7
+
+install:
   # Install Ansible.
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - gem install serverspec
