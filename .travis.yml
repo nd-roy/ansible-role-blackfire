@@ -47,8 +47,8 @@ before_install:
 
 install:
   # Install Ansible.
-  - pip install --upgrade pip
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
+  - sudo pip install --upgrade pip
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then sudo pip install ansible; else sudo pip install ansible==$ANSIBLE_VERSION; fi
   - gem install serverspec
 
 matrix:
