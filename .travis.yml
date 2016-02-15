@@ -47,6 +47,7 @@ before_install:
 
 install:
   # Install Ansible.
+  - pip install --upgrade pip
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - gem install serverspec
 
