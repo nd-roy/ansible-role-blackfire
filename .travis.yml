@@ -43,7 +43,7 @@ env:
   - ANSIBLE_VERSION=1.4
 
 before_install:
-  - sudo apt-get install python2.7
+  - sudo apt-get install python2.7 php5
 
 install:
   # Install Ansible.
