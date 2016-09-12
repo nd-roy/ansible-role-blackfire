@@ -22,6 +22,12 @@
   tags: blackfire
   apt: name=blackfire-agent state=present
 
+- name: Check if php is installed
+  command: command -v php >/dev/null 2>&1 || { echo >&2 "php is not installed.  Aborting."; exit 1; }
+  register: deb_check
+  ignore_errors: true
+
 - name: Install the blackfire-php package
   tags: blackfire
   apt: name=blackfire-php state=present
+  when: deb_check|succeeded
