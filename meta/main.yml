@@ -1,9 +1,9 @@
 ---
 galaxy_info:
-  author: Abdoul N'Diaye
+  author: Abdoul N'Diaye, Mariano Barcia
   description: Blackfire installation
   license: MIT
-  min_ansible_version: 1.4
+  min_ansible_version: 2.0
   #
   # Below are all platforms currently available. Just uncomment
   # the ones that apply to your role. If you don't see your 
@@ -18,6 +18,7 @@ galaxy_info:
   - name: Debian
     versions:
     - wheezy
+    - jessie
   #
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
@@ -27,9 +28,3 @@ galaxy_info:
   - monitoring
   - system
   - web
-dependencies: []
-  # List your role dependencies here, one per line. Only
-  # dependencies available via galaxy should be listed here.
-  # Be sure to remove the '[]' above if you add dependencies
-  # to this list.
-  

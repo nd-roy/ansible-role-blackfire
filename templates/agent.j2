@@ -8,37 +8,37 @@
 ; setting: ca-cert
 ; desc   : Sets the PEM encoded certicates
 ; default:
-ca-cert=
+ca-cert={{ blackfire_ca_cert }}
 
 ;
 ; setting: collector
 ; desc   : Sets the URL of Blackfire's data collector
 ; default: https://blackfire.io
-collector={{ blackfire_collector }}
+collector={{ blackfire_collector|default('https://blackfire.io') }}
 
 ;
 ; setting: http-proxy
 ; desc   : Sets the http proxy to use
 ; default:
-http-proxy=
+http-proxy={{ blackfire_http_proxy }}
 
 ;
 ; setting: https-proxy
 ; desc   : Sets the https proxy to use
 ; default:
-https-proxy=
+https-proxy={{ blackfire_https_proxy }}
 
 ;
 ; setting: log-file
 ; desc   : Sets the path of the log file. Use stderr to log to stderr
 ; default: stderr
-log-file=stderr
+log-file={{ blackfire_log_file|default('stderr') }}
 
 ;
 ; setting: log-level
 ; desc   : log verbosity level (4: debug, 3: info, 2: warning, 1: error)
 ; default: 1
-log-level={{ blackfire_log_level }}
+log-level={{ blackfire_log_level|default(1) }}
 
 ;
 ; setting: server-id
@@ -56,11 +56,10 @@ server-token={{ blackfire_server_token }}
 ; setting: socket
 ; desc   : Sets the socket the agent should read traces from. Possible value can be a unix socket or a TCP address. ie: unix:///var/run/blackfire/agent.sock or tcp://127.0.0.1:8307
 ; default: unix:///var/run/blackfire/agent.sock
-socket={{ blackfire_socket }}
+socket={{ blackfire_socket|default('unix:///var/run/blackfire/agent.sock') }}
 
 ;
 ; setting: spec
 ; desc   : Sets the path to the json specifications file
 ; default:
-spec=
-
+spec={{ blackfire_spec }}

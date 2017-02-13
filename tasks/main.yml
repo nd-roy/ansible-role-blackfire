@@ -2,19 +2,21 @@
 # tasks file for blackfire.
 
 - name: Include OS specific vars
-  tags: blackfire
   include_vars: "os_family/{{ ansible_os_family }}.yml"
 
 - include: os_family/Debian.yml
-  tags: blackfire
   when: ansible_os_family == 'Debian'
 
 - include: os_family/RedHat.yml
-  tags: blackfire
   when: ansible_os_family == 'RedHat'
 
+- name: Install the blackfire-agent package
+  package: name=blackfire-agent state=present
+
+- name: Install the blackfire-php package
+  package: name=blackfire-php state=present
+
 - name: Create agent configuration
-  tags: blackfire
   template:
     src=agent.j2
     dest={{ blackfire_directory }}/agent
@@ -23,8 +25,15 @@
     mode=0644
   register: agent_configuration_state
 
+- name: Create CLI tool configuration file
+  template:
+    src=blackfire.ini.j2
+    dest="{{ blackfire_user_directory }}/.blackfire.ini"
+    owner="{{ blackfire_user }}"
+    mode=0644
+  when: blackfire_client_id|default('') != "" and blackfire_client_token|default('') != ""
+
 - name: Service blackfire-agent restart
-  tags: blackfire
   sudo: true
   service: name=blackfire-agent state=restarted
   notify:
@@ -33,6 +42,5 @@
   when: agent_configuration_state|changed
 
 - name: Restart apache if enable in configuration
-  tags: blackfire
   service: name=apache2 state=restarted
   when: blackfire_apache_enable
