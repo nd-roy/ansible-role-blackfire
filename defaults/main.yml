@@ -22,3 +22,24 @@ blackfire_apache_enable: false
 
 # Restart php fpm after the activation of blackfire php extension
 blackfire_php_fpm_enable: true
+
+# Blackfire CLI tool
+
+# Sets the Client ID used for API authentication
+#blackfire_client_id: ""
+
+# Sets the Client ID used for API authentication
+#blackfire_client_token: ""
+
+# User of the CLI tool
+blackfire_user: root
+blackfire_user_directory: "{{ (blackfire_user == 'root') | ternary('/root', '/home/' + blackfire_user) }}"
+
+# Other params configurable as well
+blackfire_ca_cert: ""
+blackfire_http_proxy: ""
+blackfire_https_proxy: ""
+blackfire_timeout: '15s'
+blackfire_log_file: 'stderr'
+blackfire_socket: 'unix:///var/run/blackfire/agent.sock'
+blackfire_spec: ''

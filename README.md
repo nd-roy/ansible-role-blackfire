@@ -21,25 +21,46 @@ Role Variables
 ``` yaml
     # Sets the server id used to authenticate with Blackfire API
     #blackfire_server_id: __CHANGE_THIS_VALUE__
-    
+        
     # Sets the server token used to authenticate with Blackfire API. It is unsafe to set this from the command line
     #blackfire_server_token: __CHANGE_THIS_VALUE__
-    
+        
     # Log verbosity level (4: debug, 3: info, 2: warning, 1: error)
     blackfire_log_level: 1
-    
+        
     # Sets the socket the agent should read traces from.
     # Possible value can be a unix socket or a TCP address. ie: unix:///var/run/blackfire/agent.sock or tcp://127.0.0.1:8307
     blackfire_socket: "unix:///var/run/blackfire/agent.sock"
-    
+        
     # Sets the URL of Blackfire's data collector
     blackfire_collector: https://blackfire.io
-    
+        
     # Restart apache after the activation of blackfire php extension
     blackfire_apache_enable: false
-    
+        
     # Restart php fpm after the activation of blackfire php extension
     blackfire_php_fpm_enable: true
+    
+    # CLI tool
+    
+    # Sets the Client ID used for API authentication
+    #blackfire_client_id
+    
+    # Sets the Client Token used for API authentication
+    #blackfire_client_token
+    
+    # User of the CLI tool
+    blackfire_user: root
+    blackfire_user_directory: '/root'
+    
+    # Other params configurable as well
+    blackfire_ca_cert: ""
+    blackfire_http_proxy: ""
+    blackfire_https_proxy: ""
+    blackfire_timeout: '15s'
+    blackfire_log_file: 'stderr'
+    blackfire_socket: 'unix:///var/run/blackfire/agent.sock'
+    blackfire_spec: ''
 ```
 
 Dependencies
@@ -53,10 +74,11 @@ Example Playbook
 ``` yaml
     - hosts: all
       roles:
-         - { role: AbdoulNdiaye.Blackfire }
-      vars:
-        blackfire_server_id:    __CHANGE_THIS_VALUE__
-        blackfire_server_token: __CHANGE_THIS_VALUE__
+      - role: AbdoulNdiaye.Blackfire
+        tags: blackfire
+        vars:
+          blackfire_server_id:    __CHANGE_THIS_VALUE__
+          blackfire_server_token: __CHANGE_THIS_VALUE__
 ```
 
 FAQ

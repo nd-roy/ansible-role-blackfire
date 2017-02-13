@@ -1,27 +1,13 @@
 ---
-
 ## Debian tasks
 
-- name: Install Curl
-  apt: name=curl state=present
-
 - name: Register the packagecloud key
-  tags: blackfire
   apt_key:
     url: "{{ blackfire_package_cloud_key_url }}"
     state: present
 
 - name: Add Blackfire package list in source.list
-  tags: blackfire
   apt_repository:
     repo: 'deb {{ blackfire_package_url }} any main'
     state: present
     update_cache: yes
-
-- name: Install the blackfire-agent package
-  tags: blackfire
-  apt: name=blackfire-agent state=present
-
-- name: Install the blackfire-php package
-  tags: blackfire
-  apt: name=blackfire-php state=present
