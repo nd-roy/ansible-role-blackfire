@@ -11,7 +11,15 @@
 
 - name: Add Blackfire repository to the configuration
   tags: blackfire
-  shell: curl "{{ blackfire_repository }}" | sudo tee /etc/yum.repos.d/blackfire.repo
+  get_url:
+    url: "{{ blackfire_repository }}"
+    dest: /etc/yum.repos.d/blackfire.repo
+
+- name: install gpg key
+  tags: blackfire
+  rpm_key:
+    key: https://packagecloud.io/gpg.key
+    state: present
 
 - name: Install the blackfire-agent package
   tags: blackfire

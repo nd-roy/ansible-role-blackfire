@@ -31,8 +31,3 @@
     - restart php-fpm
     - restart apache
   when: agent_configuration_state|changed
-
-- name: Restart apache if enable in configuration
-  tags: blackfire
-  service: name=apache2 state=restarted
-  when: blackfire_apache_enable

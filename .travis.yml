@@ -1,6 +1,7 @@
 ---
 
 language: python
+sudo: required
 
 python:
   - 2.7
@@ -41,6 +42,10 @@ env:
   - ANSIBLE_VERSION=1.4.2
   - ANSIBLE_VERSION=1.4.1
   - ANSIBLE_VERSION=1.4
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y php5-common php5-cli php5-fpm
 
 install:
   # Install Ansible.

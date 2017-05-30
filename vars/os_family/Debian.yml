@@ -6,3 +6,4 @@ blackfire_package_url: http://packages.blackfire.io/debian
 blackfire_source_list_file: /etc/apt/sources.list.d/blackfire.list
 
 blackfire_php_fpm_daemon: php5-fpm
+blackfire_apache_daemon: apache2
